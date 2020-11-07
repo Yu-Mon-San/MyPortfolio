@@ -1,0 +1,72 @@
+AOS.init();
+       window.addEventListener("scroll",function(){
+          var header = document.querySelector("header");
+          header.classList.toggle("sticky", window.scrollY > 0);
+       });
+
+
+       TweenMax.to('.intro .save', 2,{y : -100, opacity:0, ease:Expo.easeInOut});
+       TweenMax.to('.intro .bod1', 2,{x : -170, opacity:0,  ease:Expo.easeInOut});
+       TweenMax.to('.intro .bod2', 2,{x : 10, opacity:0,  ease:Expo.easeInOut});
+       TweenMax.to('.intro', 2, {top:"-100%", delay: 0.9, ease:Expo.easeInOut});
+
+       TweenMax.from('.brand-name', 2, {x : -30, delay: 2, opacity: 0, ease:Expo.easeInOut});
+       TweenMax.from('.nav ul li a', 2, {x : -30, delay: 2.5, opacity: 0, ease:Expo.easeInOut});
+       TweenMax.from('.home-content .text1', 2, {y : -30, delay: 3, opacity: 0, ease:Expo.easeInOut});
+       TweenMax.from('.home-content h3', 2, {y : -30, delay: 3.2, opacity: 0, ease:Expo.easeInOut});
+       TweenMax.from('.home-content .text2', 2, {y : -30, delay: 3.4, opacity: 0, ease:Expo.easeInOut});
+       TweenMax.from('.home-content .mybtn1', 2, {x : -30, delay: 3.6, opacity: 0, ease:Expo.easeInOut});
+       TweenMax.from('.social-media a', 2, {y : 30, delay: 3.8, opacity: 0, ease:Expo.easeInOut});
+       TweenMax.from('.down-arrow', 2, {y : -30, delay: 4, opacity: 0, ease:Expo.easeInOut});
+
+
+
+       var ShowNav = document.getElementById('btn');
+       var ClcNav = document.getElementById('cancel');
+
+       ShowNav.addEventListener("click", function(){
+          document.querySelector(".mobile-size").style.display = "block";
+       });
+       ClcNav.addEventListener("click", function(){
+          document.querySelector(".mobile-size").style.display = "none";
+       });
+
+
+       var typed = new Typed(".typing", {
+        strings: ["Content Writer", "UI/UX Designer", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+    document.querySelector(".prevBtn").addEventListener("click", () => {
+       changeSlides(-1);
+    });
+    document.querySelector(".nextBtn").addEventListener("click", () => {
+       changeSlides(1);
+    });
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function changeSlides(n) {
+       showSlides((slideIndex += n));
+    }
+    function currentSlide(n) {
+       showSlides((slideIndex = n));
+    }
+    function showSlides(n) {
+       var i;
+       var slides = document.getElementsByClassName("Slide");
+       var dots = document.getElementsByClassName("Navdot");
+       if (n > slides.length) {
+          slideIndex = 1;
+       }
+       if (n < 1) {
+          slideIndex = slides.length;
+       }
+       Array.from(slides).forEach(item => (item.style.display = "none"));
+       Array.from(dots).forEach(
+          item => (item.className = item.className.replace(" selected", ""))
+       );
+       slides[slideIndex - 1].style.display = "block";
+       dots[slideIndex - 1].className += " selected";
+    }

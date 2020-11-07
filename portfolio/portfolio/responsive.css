@@ -1,0 +1,44 @@
+@media (max-width: 1130px) {
+    .nav ul{
+      display: none;
+    }
+    label #btn{
+      display: block;
+    }
+  	#check:checked ~ label #btn{
+      display: none;
+    }
+  	#check:checked ~ label #cancel{
+      display: block;
+    }
+}
+@media (max-width: 574px) {
+    .brand-name{
+      font-size: 20px;
+      margin-left: 20px;
+      letter-spacing: 0;
+    }
+}
+@media (max-width: 425px) {
+    .down-arrow{
+      top: 90%;
+    }
+}
+@media (max-width: 320px) {
+    .down-arrow{
+      top: 94%;
+    }
+}
+@media (max-width: 860px) {
+    .save{
+      font-size: 45px;
+    }
+    .bod1{
+      width: 100px;
+      margin-right: 90px;
+    }
+    .bod2{
+      width: 100px;
+      margin-left: 70px;
+    }
+}
